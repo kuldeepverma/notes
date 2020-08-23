@@ -17,6 +17,7 @@ export PATH=$PATH:/c/Users/KVerma/shell_scripts
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="gallois"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,7 +77,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting docker history-substring-search zsh-completions)
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,7 +108,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias d="docker"
+alias vi="vim"
+alias play-java="cd /d/playground/java/javabrains"
+alias webmd-uk="cd /d/webmd/medscapeuk"
+alias gs="git status"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PROMPT_EOL_MARK=""
 
 source ~/.bash_profile;
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
